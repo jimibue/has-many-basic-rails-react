@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Code = styled.pre`
-    font-family:MonoLisa;
     color:#ff00ff;
 `;
 
