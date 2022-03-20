@@ -7,11 +7,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./pages/About";
 import DataProvider from "./providers/DataProvider";
 import Home from "./pages/Home";
+import Users from "./pages/Users";
 
-
-const NotFound = ()=>{
-  return <p>path not found</p>
-}
+const NotFound = () => {
+  return <p>path not found</p>;
+};
 
 ReactDOM.render(
   <DataProvider>
@@ -19,8 +19,14 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="/about" element={<About />} />
-          <Route index path="/home" element={<Home />} />
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route exact path="/users" element={<Users/>} />
           <Route path="*" element={<NotFound />} />
+          {/* <Route exact path="/users/:id" component={UserShow} />
+          <Route exact path="/grades" component={Grades} />
+          <Route exact path="/skills" component={Skills} />
+          <Route exact path="/skills/:id" component={SkillShow} /> */}
         </Route>
       </Routes>
     </BrowserRouter>
